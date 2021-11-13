@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+    padding: 1rem;
+}
+
+.container{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.project{
+    border: 2px solid rgba(0,0,0,0.5);
+    width: 150px;
+    height: 150px;
+  
+    margin: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+
+   
+ 
+
+}
