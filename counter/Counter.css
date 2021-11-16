@@ -1,0 +1,32 @@
+body{
+    height: 100vh;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    padding: 1rem;
+    background-color: white;
+    flex-direction: column;
+}
+
+.btn{
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 0.4rem;
+    margin: 1rem 0.5rem;
+
+}
+
+.btn:hover{
+    background-color: rgb(112, 197, 186);
+    outline: none;
+}
+
+#value{
+    font-size: 4rem;
+}

@@ -1,13 +1,4 @@
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
- 
-    text-decoration: none;
-    list-style: none;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-}
+
 
 nav{
   
@@ -78,4 +69,10 @@ h2{
     color: white
 }
 
+a:hover{
+    color: blue;
+}
 
+a:active{
+    color: red;
+}
