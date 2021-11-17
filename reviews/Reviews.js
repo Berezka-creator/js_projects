@@ -80,16 +80,18 @@ nextBtn.addEventListener('click', function(){
     showPerson(currentItem);
 });
 
+
 //show previous person
 prevBtn.addEventListener('click', function(){
     currentItem --;
 
     if(currentItem < 0){
         currentItem = reviews.length - 1;
-    }
+    };
     
     showPerson(currentItem);
-})
+});
+
 
 //show random person
  randomBtn.addEventListener('click', function(){
@@ -99,4 +101,4 @@ prevBtn.addEventListener('click', function(){
 
 function getRandomNumber(){
     return Math.floor(Math.random()*reviews.length);
-}
+};
