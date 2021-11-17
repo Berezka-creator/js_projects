@@ -56,5 +56,47 @@ let currentItem = 0;
 //load initial item
 
 window.addEventListener('DOMContentLoaded', function(){
-    console.log("shake and bake")
+  showPerson(currentItem);
+});
+
+//show person based on item
+function showPerson(person){
+    const item = reviews[person];
+    img.src = item.img;
+    author.textContent = item.name;
+    job.textContent = item.job;
+    info.textContent = item.text;
+}
+
+//show nex person
+nextBtn.addEventListener('click', function(){
+
+    currentItem ++;
+
+    if(currentItem > reviews.length - 1){
+        currentItem = 0;
+    }
+    
+    showPerson(currentItem);
+});
+
+//show previous person
+prevBtn.addEventListener('click', function(){
+    currentItem --;
+
+    if(currentItem < 0){
+        currentItem = reviews.length - 1;
+    }
+    
+    showPerson(currentItem);
 })
+
+//show random person
+ randomBtn.addEventListener('click', function(){
+     currentItem = getRandomNumber();
+     showPerson(currentItem);   
+ });
+
+function getRandomNumber(){
+    return Math.floor(Math.random()*reviews.length);
+}
