@@ -20,13 +20,13 @@ form.addEventListener('submit', function(e){
   e.preventDefault();
   const value = parseInt(amount.value);
 
-  //if we have following, we will have an errow:
+  //if we have following, we will have an errow and we wil display just oneparagraph:
   //empty
   //-1
   //>9
 
   if(isNaN(value) || value < 0 || value > 9 ){
-    resultinnerHTML = `<p class="result">${text[0]}</p>`
+    result.innerHTML = `<p class="result">${text[0]}</p>`
   }
   console.log()
 })
