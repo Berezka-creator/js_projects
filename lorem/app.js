@@ -19,14 +19,25 @@ const result = document.querySelector('.lorem-text');
 form.addEventListener('submit', function(e){
   e.preventDefault();
   const value = parseInt(amount.value);
+  const random = Math.floor(Math.random()*text.length) 
 
   //if we have following, we will have an errow and we wil display just oneparagraph:
   //empty
   //-1
   //>9
 
-  if(isNaN(value) || value < 0 || value > 9 ){
-    result.innerHTML = `<p class="result">${text[0]}</p>`
+  if(isNaN(value) || value <= 0 || value > 9 ){
+    result.innerHTML = `<p class="result">${text[random]}</p>`;
   }
-  console.log()
+
+  else{
+    let tempText = text.slice(0, value);
+    tempText = tempText.map(p => {
+      console.log(p);
+      return `<p class="result">${p}</p>`;
+    }).join("");
+
+    result.innerHTML = tempText;
+
+  }
 })
