@@ -43,9 +43,15 @@ function addItem(e){
                 <button type="button" class="delete-btn">
                     <i class="fas fa-trash"></i>
                 </button>
-
             </div>
             `;
+
+            const editBtn = element.querySelector('.edit-btn');
+            const deleteBtn = element.querySelector('.delete-btn');
+
+            editBtn.addEventListener('click', editItem);
+            deleteBtn.addEventListener('click', deleteItem);
+
         //append child
         list.appendChild(element);
 
@@ -60,8 +66,13 @@ function addItem(e){
 
     }
 
-    else if (!value && editFlag){
-        console.log("editing")
+    else if (value && editFlag){
+       editElement.innerHTML = value;
+       displayAlert("value changed", "success");
+
+       //edit local storage
+       editLocalStorage(editID, value);
+       setBackToDefault();
     }
 
     else{
@@ -92,10 +103,39 @@ function clearItems(){
     }
     container.classList.remove('show-container');
     displayAlert('empty list', 'danger');
+    setBackToDefault();
 
-    //localStorage.removeItem('list);
+    localStorage.removeItem('list')
 }
 
+//delete item
+function deleteItem(e){
+    const element = e.currentTarget.parentElement.parentElement;
+    const id = element.dataset.id;
+    list.removeChild(element);
+
+    if(list.children.length === 0){
+        container.classList.remove('show-container');
+    }
+
+    displayAlert('item removed', 'danger');
+    setBackToDefault();
+    //remove from local storage
+    removeFromLocalStorage(id);
+}
+
+//edit Item
+function editItem(e){
+    const element = e.currentTarget.parentElement.parentElement;
+   //set edit item
+   editElement = e.currentTarget.parentElement.previousElementSibling;
+   
+   // set form value
+   grocery.value = editElement.innerHTML;
+   editFlag = true;
+   editID = element.dataset.id;
+   submitBtn.textContent = "edit";
+}
 //set back to default
 function setBackToDefault(){
     grocery.value='';
@@ -107,7 +147,48 @@ function setBackToDefault(){
 
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value){
-    console.log('added to local storage')
+    //console.log('added to local storage')
+    const grocery = {id, value};
+
+    let items = getLocalStorage();
+
+    items.push(grocery);
+    localStorage.setItem('list', JSON.stringify(items));   
+}
+
+function removeFromLocalStorage(id){
+    let items = getLocalStorage();
+
+    items = items.filter(function(item){
+        if(item.id !== id){
+            return item;
+        }
+    });
+
+    localStorage.setItem('list', JSON.stringify(items));
+}
+
+function editLocalStorage(id, value){
+    //local storage API
+
+    //setItem
+
+    //getItem
+
+    //removeItem
+
+    //save as strings
+    // localStorage.setItem('orange', JSON.stringify(['item', 'item2']));
+
+    // const oranges = JSON.parse(localStorage.getItem('orange'));
+
+    // localStorage.removeItem('orange');
+}
+
+function getLocalStorage(){
+    return localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem('list'))
+    : [];
 }
 
 // ****** SETUP ITEMS **********
