@@ -1,30 +1,92 @@
 
+let nums= [1,2,3,4,5];
+let k = 2;
+
+function rotateArray(nums, k){
+
+    k%=nums.length;
+ 
+        let endNums = nums.splice(nums.length- k);
+
+        nums.unshift(...endNums);
+
+       return nums;
+    
+     
+}
+
+rotateArray(nums, k);
+
+
+// let nums = [-10,-1,2,5];
+// res = [1, 4,25,100]
+
+// function twoPointers(nums){
+//     let start = 0;
+//     let end = nums.length-1;
+//     let array =[];
+
+//     while (start < end){
+//         let startNum = nums[start]*nums[start];
+//         let endNum = nums[end]*nums[end];
+//         console.log(startNum +" , "+ endNum);
+
+//         if (startNum > endNum){
+//             array.unshift(startNum);
+//             console.log(array);
+//             start ++;
+           
+//         }else{
+//             array.unshift(endNum);
+//             end --;
+//         } 
+//     }
+//     return array;
+// }
+
+// twoPointers(nums);
+
+
+
+// let nums = [-4, -1, 2,3,4,5];
+// function sortedSquare(nums){
+
+//     let newNums = nums.map(n => {
+//         console.log(Math.pow(n, 2));
+//         return Math.pow(n, 2);
+//     });
+//     console.log(newNums);
+//     console.log(newNums.sort((a,b) => {return a-b}))
+// }
+
+// sortedSquare(nums);
+
 //Search Insert Position
 
-let nums = [1,3,5,6];
-let target = 4;
+// let nums = [1,3,5,6];
+// let target = 4;
 
-function insertPosition(nums, target){
+// function insertPosition(nums, target){
 
-    let low = 0;
-    let high = nums.length;
-    let mid;
+//     let low = 0;
+//     let high = nums.length;
+//     let mid;
 
-    while (low < high){
-        mid = Math.floor((low + high)/2);
-        console.log("mid = "+mid);
+//     while (low < high){
+//         mid = Math.floor((low + high)/2);
+//         console.log("mid = "+mid);
 
-        if(target === nums[mid]){
-            return mid;
-        }else if(target > nums[mid]){
-            low = mid;
-            //
-        }else{
-            high = mid-1;
-        }
-    }
-}
-insertPosition(nums, target)
+//         if(target === nums[mid]){
+//             return mid;
+//         }else if(target > nums[mid]){
+//             low = mid;
+//             //
+//         }else{
+//             high = mid-1;
+//         }
+//     }
+// }
+// insertPosition(nums, target)
 
 
 //Binary SEarch
