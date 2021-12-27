@@ -1,21 +1,45 @@
 
-let nums= [1,2,3,4,5];
-let k = 2;
+let nums = [0,3,12]
+// [1,3,12,0]
 
-function rotateArray(nums, k){
+function moveZeroes(nums){
 
-    k%=nums.length;
- 
-        let endNums = nums.splice(nums.length- k);
+    let begin = 0;
+    let end = nums.length -1;
+    console.log(nums);
 
-        nums.unshift(...endNums);
-
-       return nums;
-    
-     
+    while (begin < end){
+        if(nums[begin] === 0){
+            let store = nums[begin];
+            console.log("store " +store);
+           
+            nums[begin] = nums[begin+1];
+            nums[begin] = store;
+        }   
+    }
 }
 
-rotateArray(nums, k);
+moveZeroes(nums)
+
+
+
+// let nums= [1,2,3,4,5];
+// let k = 2;
+
+// function rotateArray(nums, k){
+
+//     k%=nums.length;
+ 
+//         let endNums = nums.splice(nums.length- k);
+
+//         nums.unshift(...endNums);
+
+//        return nums;
+    
+     
+// }
+
+// rotateArray(nums, k);
 
 
 // let nums = [-10,-1,2,5];
