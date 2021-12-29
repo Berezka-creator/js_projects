@@ -1,25 +1,123 @@
 
-let nums = [0,3,12]
-// [1,3,12,0]
+let x=1234;
 
-function moveZeroes(nums){
+function palindrom(x){
+    let num =String(x).split("");
+    let left = 0;
+    let right = num.length-1;
+   
+    let answer = false;
 
-    let begin = 0;
-    let end = nums.length -1;
-    console.log(nums);
+    for(var i=left; i<right; i++){
+        console.log(num[left]+ ", "+num[right]);
+        if(num[left] !== num[right]){
+            answer = false;
+            break;
+        }else{
+            answer = true;
+            left++;
+            right--;
 
-    while (begin < end){
-        if(nums[begin] === 0){
-            let store = nums[begin];
-            console.log("store " +store);
-           
-            nums[begin] = nums[begin+1];
-            nums[begin] = store;
-        }   
+        }
     }
+
+    console.log(answer);
+    // while(left < right){
+    //     console.log(x[left]);
+    //     if(x[left] !== x[right]){
+            
+    //         break;
+          
+
+    //     }else{
+    //         left++;
+    //         right--
+    //     }
+
+    // }
+  
 }
 
-moveZeroes(nums)
+palindrom(x);
+
+// let s="kacka";
+
+// function longestSub(s){
+//     let start=0, end=0;
+//     let saveLength = 0;
+//     let tempStr = '';
+    
+//     while(end !== s.length){
+//         console.log("s[end] "+s[end])
+//         if(!tempStr.includes(s[end])){
+//             end++;
+//             tempStr = s.slice(start, end);
+//             console.log(tempStr)
+//         }else{
+//             start++;
+//             tempStr = tempStr.substring(1);
+//             console.log(tempStr)
+//         }
+//         if(tempStr.length > saveLength){
+//             saveLength = tempStr.length;   
+//         }
+//     }
+//     console.log(tempStr)
+//     return saveLength;
+
+
+// }
+
+// longestSub(s);
+  // let map = new Map()
+    // let max = 0
+    // let start = 0
+  
+    // for (let i = 0; i < s.length; i++) {
+    //   const char = s[i];
+    //   console.log(char);
+    //   console.log(map);
+  
+    //   if (map.has(char)) {
+    //     start = Math.max(start, map.get(char) + 1);
+        
+      
+    //   }
+
+    //   console.log("i " +i);
+    //   console.log("start "+ start);
+    //   console.log("max "+ max);
+
+  
+    //   max = Math.max(max, i - start + 1);
+
+    //   map.set(char, i)
+    // }
+  
+    // return max
+
+
+// let nums = [0,3,12]
+// // [1,3,12,0]
+
+// function moveZeroes(nums){
+
+//     let begin = 0;
+//     let end = nums.length -1;
+//     console.log(nums);
+
+//     while (begin < end){
+//         if(nums[begin] === 0){
+//             let store = nums[begin];
+//             console.log("store " +store);
+           
+//             nums[begin] = nums[begin+1];
+//             nums[begin] = store;
+//         }   
+//     }
+// }
+
+// moveZeroes(nums);
 
 
 
