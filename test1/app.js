@@ -1,27 +1,68 @@
+let s = "IX";
 
-let x=1234;
+function romNums(s){
 
-function palindrom(x){
-    let num =String(x).split("");
-    let left = 0;
-    let right = num.length-1;
-   
-    let answer = false;
+    let roman = new Map();
+    roman.set("I", 1);
+    roman.set("V", 5);
+    roman.set("X", 10);
+    roman.set("L", 50);
+    roman.set("C", 100);
+    roman.set("D", 500);
+    roman.set("M", 1000);
+    console.log(roman);
+    let answer = 0;
 
-    for(var i=left; i<right; i++){
-        console.log(num[left]+ ", "+num[right]);
-        if(num[left] !== num[right]){
-            answer = false;
-            break;
-        }else{
-            answer = true;
-            left++;
-            right--;
+    for ( let i=0; i<s.length; i++ ){
+        console.log(s[i]);
 
+        for(let [key, value] of roman){
+          
+            if(s[i]=== key){
+                answer +=value;
+                console.log(answer);
+
+                if((s[i]+s[i+1] == "IV") || 
+                (s[i]+s[i+1] == "IX") ||
+                (s[i] + s[i+1] == "XL") ||
+                (s[i] + s[i+1] == "XC") ||
+                (s[i]+s[i+1] == "CD") ||
+                (s[i]+s[i+1] == "CM") 
+                ){
+                    answer -=value*2;
+                    console.log(answer)
+    
+                }
+            }
         }
     }
+    return answer;
+}
 
-    console.log(answer);
+romNums(s);
+
+// let x=1234;
+
+// function palindrom(x){
+//     let num =String(x).split("");
+//     let left = 0;
+//     let right = num.length-1;
+   
+//     let answer = false;
+
+//     for(var i=left; i<right; i++){
+//         console.log(num[left]+ ", "+num[right]);
+//         if(num[left] !== num[right]){
+//             return false;
+//         }else{
+           
+//             left++;
+//             right--;
+
+//         }
+//     }
+
+//     return true;
     // while(left < right){
     //     console.log(x[left]);
     //     if(x[left] !== x[right]){
@@ -36,9 +77,17 @@ function palindrom(x){
 
     // }
   
-}
+// }
 
-palindrom(x);
+// palindrom(x);
+
+// var isPalindrome = function(x) {
+//     const s = String(x).split("")
+//     for(let i = 0; i < s.length; i++){
+//         if(s[i] !== s[s.length - i - 1]) return false
+//     }
+//     return true
+// };
 
 // let s="kacka";
 
