@@ -1,45 +1,64 @@
-let s = "IX";
+let strs = ["flower","flat","flor"];
 
-function romNums(s){
+function prifix(strs){
 
-    let roman = new Map();
-    roman.set("I", 1);
-    roman.set("V", 5);
-    roman.set("X", 10);
-    roman.set("L", 50);
-    roman.set("C", 100);
-    roman.set("D", 500);
-    roman.set("M", 1000);
-    console.log(roman);
-    let answer = 0;
+    for (let i=0; i<strs[0].length; i++){
+        console.log("strs[0][i] " +strs[0][i])
+        console.log(" strs[strs.length -1][i] " + strs[strs.length -1][i])
 
-    for ( let i=0; i<s.length; i++ ){
-        console.log(s[i]);
-
-        for(let [key, value] of roman){
-          
-            if(s[i]=== key){
-                answer +=value;
-                console.log(answer);
-
-                if((s[i]+s[i+1] == "IV") || 
-                (s[i]+s[i+1] == "IX") ||
-                (s[i] + s[i+1] == "XL") ||
-                (s[i] + s[i+1] == "XC") ||
-                (s[i]+s[i+1] == "CD") ||
-                (s[i]+s[i+1] == "CM") 
-                ){
-                    answer -=value*2;
-                    console.log(answer)
-    
-                }
-            }
+        if(strs[0][i] !== strs[strs.length -1][i]){
+            return strs[0].substr(0, i);    
         }
     }
-    return answer;
+ console.log(strs[0]);
+    return strs[0];
+  
 }
+prifix(strs);
 
-romNums(s);
+
+// let s = "IX";
+
+// function romNums(s){
+
+//     let roman = new Map();
+//     roman.set("I", 1);
+//     roman.set("V", 5);
+//     roman.set("X", 10);
+//     roman.set("L", 50);
+//     roman.set("C", 100);
+//     roman.set("D", 500);
+//     roman.set("M", 1000);
+//     console.log(roman);
+//     let answer = 0;
+
+//     for ( let i=0; i<s.length; i++ ){
+//         console.log(s[i]);
+
+//         for(let [key, value] of roman){
+          
+//             if(s[i]=== key){
+//                 answer +=value;
+//                 console.log(answer);
+
+//                 if((s[i]+s[i+1] == "IV") || 
+//                 (s[i]+s[i+1] == "IX") ||
+//                 (s[i] + s[i+1] == "XL") ||
+//                 (s[i] + s[i+1] == "XC") ||
+//                 (s[i]+s[i+1] == "CD") ||
+//                 (s[i]+s[i+1] == "CM") 
+//                 ){
+//                     answer -=value*2;
+//                     console.log(answer)
+    
+//                 }
+//             }
+//         }
+//     }
+//     return answer;
+// }
+
+// romNums(s);
 
 // let x=1234;
 
