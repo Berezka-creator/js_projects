@@ -1,20 +1,72 @@
-let strs = ["flower","flat","flor"];
 
-function prifix(strs){
 
-    for (let i=0; i<strs[0].length; i++){
-        console.log("strs[0][i] " +strs[0][i])
-        console.log(" strs[strs.length -1][i] " + strs[strs.length -1][i])
+function loops(){
+str = "";
+    for(i=0; i<7; i++){
+        str += "#";
+        console.log(str);
+    }
+}
 
-        if(strs[0][i] !== strs[strs.length -1][i]){
-            return strs[0].substr(0, i);    
+function fizzBuzz(){
+
+    for(i=0; i<=100; i++){
+
+        if(i %3==0 && i%5==0){
+            console.log("FizzBuzz");
+        }
+
+        if(i%3 == 0){
+            console.log("Fizz");
+        }else if(i%5==0){
+            console.log("Buzz");
+        }else{
+            console.log(i);
         }
     }
- console.log(strs[0]);
-    return strs[0];
-  
 }
-prifix(strs);
+
+
+function chessBoard(){
+
+    let str =""
+
+    for(let j=1; j<=8;j++){
+        
+            for(let i=0;i<4;i++){
+ 
+               if(j%2!=0){
+                   str +=" #";
+               }else{
+                   str +="# ";
+               }
+            }
+
+        console.log(str)
+        str ="";
+     
+    } 
+}
+
+chessBoard();
+
+// let strs = ["flower","flat","flor"];
+
+// function prifix(strs){
+
+//     for (let i=0; i<strs[0].length; i++){
+//         console.log("strs[0][i] " +strs[0][i])
+//         console.log(" strs[strs.length -1][i] " + strs[strs.length -1][i])
+
+//         if(strs[0][i] !== strs[strs.length -1][i]){
+//             return strs[0].substr(0, i);    
+//         }
+//     }
+//  console.log(strs[0]);
+//     return strs[0];
+  
+// }
+// prifix(strs);
 
 
 // let s = "IX";

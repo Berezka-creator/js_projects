@@ -21,7 +21,7 @@ clearBtn.addEventListener('click', clearItems);
 
 //load items from local storage
 
-window.addEventListener("DOMContentLoaded", setUpItems)
+window.addEventListener("DOMContentLoaded", setUpItems);
 // ****** FUNCTIONS **********)
 function addItem(e){
     e.preventDefault();
