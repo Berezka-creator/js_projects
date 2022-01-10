@@ -1,5 +1,35 @@
 
 
+nums = [1,2,3,1,1,3];
+
+function numIdenticalPairs(nums) {
+    let i=0;
+    let j = nums.length-1;
+    let count = 0;
+    
+    while(i<j){
+        console.log("i "+nums[i]);
+        console.log("j "+ nums[j]);
+
+        if(nums[i]==nums[j]){
+            count++;
+            
+        } 
+        j--;
+         if(i==j){
+            console.log("IF")
+            i++;
+            j=nums.length-1;
+        }
+        
+    }
+    
+    console.log("count "+count)
+    
+};
+
+numIdenticalPairs(nums)
+
 function loops(){
 str = "";
     for(i=0; i<7; i++){
@@ -48,7 +78,6 @@ function chessBoard(){
     } 
 }
 
-chessBoard();
 
 // let strs = ["flower","flat","flor"];
 
