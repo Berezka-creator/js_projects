@@ -1,3 +1,64 @@
+const foo = {
+    bar(){
+      console.log("Hello, world!");
+    },
+    name: "Albert",
+    age: 26,
+  }
+
+
+  console.log(foo);
+
+n=14;
+
+function numOfSteps(n){
+    count=0;
+
+    while(n != 0){
+        console.log(n);
+
+
+        if(n%2 === 0){
+        
+            n=n/2;
+            console.log(n)
+           
+        }else{
+            n=n-1;
+            console.log(n)
+        }
+    
+        count++;
+      
+
+
+
+    }
+    return count;
+}
+
+
+function subtract(n){
+    
+    let str = n.toString().split("");
+    let sumReducer = (pr, cu) => parseInt(pr) + parseInt(cu);
+    let prodReducer = (pr,cu) => parseInt(pr) * parseInt(cu);
+
+
+    let sum = str.reduce(sumReducer);
+    let product = str.reduce(prodReducer);
+
+  
+
+    return product -sum;
+
+   
+    
+    // for(i=0; i<str.length;i++){
+    //     console.log(i);
+    // }
+
+}
 
 
 nums = [1,2,3,1,1,3];
@@ -27,8 +88,6 @@ function numIdenticalPairs(nums) {
     console.log("count "+count)
     
 };
-
-numIdenticalPairs(nums)
 
 function loops(){
 str = "";
