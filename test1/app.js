@@ -1,3 +1,27 @@
+
+s="adsa";
+
+function palindromStr(s){
+
+    let start=0;
+    let end =0;
+    let newArr=[];
+
+  
+    let arr = s.split('');
+    let copy = arr;
+    let revArr=arr.reverse();
+
+    console.log(revArr);
+    console.log(copy);
+
+}
+
+palindromStr(s);
+
+
+
+
 const foo = {
     bar(){
       console.log("Hello, world!");
