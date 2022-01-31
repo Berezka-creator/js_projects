@@ -5,15 +5,20 @@ function palindromStr(s){
 
     let start=0;
     let end =0;
-    let newArr=[];
+    let newStr="";
+    // let arr = s.split('');
 
+    while(end <=s.length){
+        newStr = s.slice(start, end); //a
+       //check if newStr is not palindrom
+        if(newStr.split('') !=newStr.split('').reverse()){
+            end++;
+        }
+     
+
+
+    }
   
-    let arr = s.split('');
-    let copy = arr;
-    let revArr=arr.reverse();
-
-    console.log(revArr);
-    console.log(copy);
 
 }
 
